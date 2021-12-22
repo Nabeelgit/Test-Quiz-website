@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="testquizCSS.css">
+</head>
+<body>
+    <center>
+<h1>Question 1:</h1>
+<h1>What is (a+b)² = ?</h1>
+<br>
+<input id="answerOne" placeholder="Enter answer here" style="width: 300px; height: 70px; font-size: 40px; " >
+<br><br><br>
+
+<button style="font-size: 30px; width: 100px;" id="superTwo">²</button>
+<br><br><br>
+<button onclick="submit()" id="submitBtn">Submit answer</button>
+<br><br><br><br>
+<button style="display: none;" id="nextBtn"><a href="testquizQ2.html">Next question</a></button>
+    </center>
+    <script>
+   //text color//
+
+   let colorChoice = localStorage.getItem("color")
+document.body.style.color = colorChoice
+
+//background//
+
+let savedBack = localStorage.getItem("background")
+document.body.style.backgroundColor = savedBack
+
+// functions start //
+
+let answer = document.getElementById("answerOne")
+let super2 = document.getElementById("superTwo")
+
+super2.addEventListener("click", function() {
+    answer.value += "²"
+})
+
+let submitter = document.getElementById("submitBtn")
+let status = "none"
+
+let next = document.getElementById("nextBtn")
+
+function submit() {
+    if (answer.value == "a²+b²+2ab"){
+        alert("Correct!")
+        status = "correct"
+        localStorage.setItem("stat1", status)
+        answer.disabled = true
+        submitter.disabled = true
+        super2.disabled = true
+        next.style.display = "inline"
+        
+    }
+    else if (answer.value == "a² + b² + 2ab"){
+        alert("Correct!")
+        status = "correct"
+        localStorage.setItem("stat1", status)
+        answer.disabled = true
+        submitter.disabled = true
+        super2.disabled = true
+        next.style.display = "inline"
+    }
+    else if (answer.value == "2ab+a²+b²"){
+        alert("Correct!")
+        status = "correct"
+        localStorage.setItem("stat1", status)
+        answer.disabled = true
+        submitter.disabled = true
+        super2.disabled = true
+        next.style.display = "inline"
+    }
+    else if (answer.value == "2ab + a² + b²"){
+        alert("Correct!")
+        status = "correct"
+        localStorage.setItem("stat1", status)
+        answer.disabled = true
+        submitter.disabled = true
+        super2.disabled = true
+        next.style.display = "inline"
+    }
+    else if (answer.value == "b²+a²+2ab"){
+        alert("Correct!")
+        status = "correct"
+        localStorage.setItem("stat1", status)
+        answer.disabled = true
+        submitter.disabled = true
+        super2.disabled = true
+        next.style.display = "inline"
+    }
+    else if (answer.value == "b² + a² + 2ab"){
+        alert("Correct!")
+        status = "correct"
+        localStorage.setItem("stat1", status)
+        answer.disabled = true
+        submitter.disabled = true
+        super2.disabled = true
+        next.style.display = "inline"
+    }
+    else {
+        alert("Wrong correct answer was a²+b²+2ab")
+        answer.disabled = true
+        submitter.disabled = true
+        super2.disabled = true
+        status = "wrong"
+        localStorage.setItem("stat1", status)
+        next.style.display = "inline"
+    }
+    
+}
+    </script>
+</body>
+</html>

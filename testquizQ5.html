@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="testquizCSS.css">
+</head>
+<body>
+    <center>
+        <h1>Question 5:</h1>
+        <h1>What is the formula for area in Circle</h1>
+        <br>
+        <input id="answerFive" placeholder="Enter answer here" style="width: 300px; height: 70px; font-size: 40px; " >
+        <br><br><br>
+       
+        <button style="font-size: 30px; width: 100px;" id="superFive">²</button>
+        <button style="font-size: 30px; width: 100px;" id="superPie">π</button>
+        <br><br><br>
+        <button id="submitBtn" onclick="submit()">Submit</button>
+        <br><br><br><br>
+        <button style="display: none;" id="nextBtn"><a href="finalScorequizT.html">Submit for scoring</a></button>
+            </center>
+            <script>
+           //text color//
+
+let colorChoice = localStorage.getItem("color")
+document.body.style.color = colorChoice
+
+//background//
+
+let savedBack = localStorage.getItem("background")
+document.body.style.backgroundColor = savedBack
+
+let submitter = document.getElementById("submitBtn")
+let answer = document.getElementById("answerFive")
+let super2 = document.getElementById("superFive")
+let pieSym = document.getElementById("superPie")
+
+super2.addEventListener("click", function() {
+    answer.value += "²"
+})
+
+pieSym.addEventListener("click", function() {
+    answer.value += "π"
+})
+
+let next = document.getElementById("nextBtn")
+let status = "none"
+
+function submit() {
+    if (answer.value == "A=πr²"){
+        alert("Correct!")
+        status = "correct"
+        localStorage.setItem("stat5", status)
+        pieSym.disabled = true
+        super2.disabled = true
+        answer.disabled = true
+        submitter.disabled = true
+        next.style.display = "inline"
+    }
+    else if (answer.value == "A = π r²"){
+        alert("Correct!")
+        status = "correct"
+        localStorage.setItem("stat5", status)
+        pieSym.disabled = true
+        super2.disabled = true
+        answer.disabled = true
+        submitter.disabled = true
+        next.style.display = "inline" 
+    }
+    else {
+        alert("wrong correct answer was A=πr²")
+        status = "wrong"
+        localStorage.setItem("stat5", status)
+        pieSym.disabled = true
+        super2.disabled = true
+        answer.disabled = true
+        submitter.disabled = true
+        next.style.display = "inline" 
+    }
+}
+
+            </script>
+</body>
+</html>

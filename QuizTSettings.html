@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.settingsHeading {
+    text-align: center;
+    color: white;
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    position: relative;
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 16px 18px;
+    text-decoration: none;
+  }
+  
+  li a:hover:not(.active) {
+    background-color: #111;
+  }
+  
+  .active {
+    background-color: #04AA6D;
+  }
+
+  #sett {
+      float: right;
+      background-color: rgb(43, 31, 212);
+  }
+    </style>
+</head>
+<body id="parent">
+    <center>
+        <ul>
+        <li><a class="active" href="testquizHTML.html">Home</a></li>
+        <li id="sett"><a href="QuizTSettings.html">Settings</a></li>
+        <h1 class="settingsHeading">Settings</h1>
+      </ul>
+      <br>
+<h1>Change color of text</h1>
+<button id="greenBtn" onclick="greenText()">Click to change color to green</button>
+<button id="blueBtn" onclick="blueText()">Click to change color to blue</button>
+<button id="redBtn" onclick="redText()">Click to change color to red</button>
+<button id="blackBtn" onclick="blackText()">Click to change color to black</button>
+<br><br>
+<h1>Click to change background</h1>
+<button id="greenBackground" onclick="greenBack()">Click to change background color to green</button>
+<button id="blueBackground" onclick="blueBack()">Click to change background color to blue</button>
+<button id="redBackground" onclick="redBack()">Click to change background color to red</button>
+<button id="whiteBackground" onclick="whiteBack()">Click to change background color to white</button>
+
+
+    </center>
+    <script>
+        // Functions start//
+        
+let parent = document.getElementById("parent")
+
+let savedColor = localStorage.getItem("color")
+document.body.style.color = savedColor
+
+function greenText() {
+    if (parent.style.backgroundColor == "green"){
+        parent.style.backgroundColor = "white"
+        alert("You can't have green text on green background")
+    }
+    else {
+   parent.style.color = "green"
+    localStorage.setItem("color", "Green")
+    }
+}
+function blueText() {
+    if (parent.style.backgroundColor == "blue"){
+        parent.style.backgroundColor = "white"
+        alert("You can't have blue text on blue background!")
+    }
+    else {
+    parent.style.color = "blue"
+    localStorage.setItem("color", "Blue")
+    }
+}
+function redText() {
+    if (parent.style.backgroundColor == "red"){
+        parent.style.backgroundColor = "white"
+        alert("You can't have red text on red background!")
+    }
+    else {
+    parent.style.color = "red"
+    localStorage.setItem("color", "Red")
+    }
+}
+function blackText() {
+    parent.style.color = "black"
+    localStorage.setItem("color", "Black")
+}
+
+//Background color changes //
+
+let savedBack = localStorage.getItem("background")
+document.body.style.backgroundColor = savedBack
+
+function greenBack() {
+    if (parent.style.color == "green"){
+        parent.style.color = "black"
+        alert("You can't have green text on green background!")
+    }
+    else {
+    parent.style.backgroundColor = "green"
+    localStorage.setItem("background", "green")
+    }
+}
+
+function blueBack() {
+    if (parent.style.color == "blue"){
+        parent.style.color = "black"
+        alert("You can't have blue background on blue text!")
+    }
+    else {
+        parent.style.backgroundColor = "blue"
+        localStorage.setItem("background", "blue")
+    }
+}
+
+function redBack() {
+    if (parent.style.color == "red") {
+        parent.style.color = "black"
+        alert("You can't have red background on red text")
+    }
+    else {
+        parent.style.backgroundColor = "red"
+        localStorage.setItem("background", "red")
+    }
+}
+function whiteBack() {
+    parent.style.backgroundColor = "white"
+    localStorage.setItem("background", "white")
+}
+    </script>
+</body>
+</html>

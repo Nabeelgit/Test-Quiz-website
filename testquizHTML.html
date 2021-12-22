@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="testquizCSS.css">
+</head>
+<body>
+    <center>
+        <ul>
+            <li><a class="active" href="testquizHTML.html">Home</a></li>
+            <li id="sett"><a href="QuizTSettings.html">Settings</a></li>
+            <h1 class="welcomeHeading">Welcome to Quiz</h1>
+          </ul>
+<h1>To start quiz click below:</h1>
+<button><a href="testquizQ1.html">Start</a></button>
+<h1>If teacher click here:</h1>
+<button><a href="TeacherQuizT.html">Teacher login</a></button>
+<br><br><br>
+<h1 id="final-score">Quiz status: Not taken</h1>
+<script>
+   //text color//
+
+let colorChoice = localStorage.getItem("color")
+document.body.style.color = colorChoice
+
+//background//
+
+let savedBack = localStorage.getItem("background")
+document.body.style.backgroundColor = savedBack
+
+let finalOutput = document.getElementById("final-score")
+let score = localStorage.getItem("numberCo")
+finalOutput.innerHTML = "Quiz status: " + score
+
+</script>
+    </center>
+</body>
+</html>

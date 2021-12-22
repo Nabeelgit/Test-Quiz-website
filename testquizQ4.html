@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="testquizCSS.css">
+</head>
+<body>
+    <center>
+        <h1>Question 4:</h1>
+        <h1>What is the distance formula?</h1>
+        <br>
+        <input id="answerFour" placeholder="Enter answer here" style="width: 315px; height: 70px; font-size: 40px; " >
+        <br><br><br>
+    
+        <button style="font-size: 30px; width: 100px;" id="super2Four">²</button>
+        <button style="font-size: 30px; width: 100px;" id="superFour">₂</button>
+        <button style="font-size: 30px; width: 100px;" id="superOFour">₁</button>
+        <button style="font-size: 30px; width: 100px;" id="squareFour">√</button>
+        <br><br><br>
+        <button id="submitBtn" onclick="submit()">Submit</button>
+        <br><br><br><br>
+        <button style="display: none;" id="nextBtn"><a href="testquizQ5.html">Next question</a></button>
+            </center>
+            <script>
+           //text color//
+
+let colorChoice = localStorage.getItem("color")
+document.body.style.color = colorChoice
+
+//background//
+
+let savedBack = localStorage.getItem("background")
+document.body.style.backgroundColor = savedBack
+
+let answer = document.getElementById("answerFour")
+let super2 = document.getElementById("superFour")
+let submitter = document.getElementById("submitBtn")
+
+let squareSym = document.getElementById("squareFour")
+
+squareSym.addEventListener("click", function() {
+    answer.value += "√"
+})
+
+let super2F = document.getElementById("super2Four")
+super2F.addEventListener("click", function() {
+    answer.value += "²"
+})
+
+super2.addEventListener("click", function() {
+    answer.value += "₂"
+})
+
+let superOne = document.getElementById("superOFour")
+
+superOne.addEventListener("click", function() {
+    answer.value += "₁"
+})
+
+let status = "none"
+
+let next = document.getElementById("nextBtn")
+
+function submit() {
+    if (answer.value == "d=√(x₂-x₁)²+(y₂-y₁)²"){
+        alert("correct!")
+        status = "correct"
+        localStorage.setItem("stat4", status)
+        next.style.display = "inline"
+        super2F.disabled = true
+        superOne.disabled = true
+        super2.disabled = true
+        answer.disabled = true
+        squareSym.disabled = true
+        submitter.disabled = true
+    }
+    else {
+        alert("wrong correct answer was: d=√(x₂-x₁)²+(y₂-y₁)² ")
+        status = "wrong"
+        localStorage.setItem("stat4", status)
+        next.style.display = "inline"
+        super2F.disabled = true
+        superOne.disabled = true
+        super2.disabled = true
+        answer.disabled = true
+        squareSym.disabled = true
+        submitter.disabled = true
+    }
+}
+
+            </script>
+</body>
+</html>

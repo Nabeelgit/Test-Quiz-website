@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>Your final score was:</h1>
+        <h1 id="final-Score"></h1>
+        <br><br><br>
+        <button><a href="testquizHTML.html">Home</a></button>
+    </center>
+    <script>
+        let finalOutput = document.getElementById("final-Score")
+
+        let Q1 = localStorage.getItem("stat1")
+        let Q2 = localStorage.getItem("stat")
+        let Q3 = localStorage.getItem("stat3")
+        let Q4 = localStorage.getItem("stat4")
+        let Q5 = localStorage.getItem("stat5")
+        let counter = 0;
+        if (Q1 == "correct"){
+            counter++
+        }
+        if (Q2 == "correct"){
+            counter++
+        }
+        if (Q3 == "correct"){
+            counter++
+        }
+        if (Q4 == "correct"){
+            counter++
+        }
+        if (Q5 == "correct"){
+            counter++
+        }
+        if (counter == 1){
+            let score = "20%"
+            finalOutput.innerHTML = score
+        }
+        else if (counter == 2){
+            let score = "40%"
+            finalOutput.innerHTML = score
+        }
+        else if (counter == 3){
+            let score = "60%"
+            finalOutput.innerHTML = score
+        }
+        else if (counter == 4){
+            let score = "80%"
+            finalOutput.innerHTML = score
+        }
+        else if (counter == 5){
+            let score = "100%"
+            finalOutput.innerHTML = score
+        }
+        localStorage.setItem("numberCo", finalOutput.innerHTML)
+        console.log(finalOutput.innerHTML)
+    </script>
+</body>
+</html>

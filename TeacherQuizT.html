@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="testquizCSS.css">
+</head>
+<body>
+    <center>
+    <h1>Welcome!</h1>
+    <h2>Here you can monitor your students scores</h2>
+    <br><br>
+    <h1 id="stScores">No scores yet...</h1>
+    <button><a href="testquizHTML.html">Back</a></button>
+    </center>
+
+    <script>
+   //text color//
+
+   let colorChoice = localStorage.getItem("color")
+document.body.style.color = colorChoice
+
+//background//
+
+let savedBack = localStorage.getItem("background")
+document.body.style.backgroundColor = savedBack
+
+let finalOutput = document.getElementById("stScores")
+let score = localStorage.getItem("numberCo")
+finalOutput.innerHTML = "Student score: " + score
+
+    </script>
+</body>
+</html>
